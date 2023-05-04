@@ -22,12 +22,13 @@ import Manageusers from "./components/AdminFunctionalities/manageusers";
 import Allcars from "./components/AdminFunctionalities/allcars";
 import Ownerdetails from "./components/AdminFunctionalities/ownerdetails";
 function App() {
+  let url = process.env.PUBLIC_URL;
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={url}>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route exact path="/" element={<Login />}></Route>
+          <Route exact path= "/dashboard" element={<Dashboard />}></Route>
           <Route path="/cardetails" element={<Cardetails />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
           <Route path="/viewhistory" element={<Viewstatus />}></Route>
