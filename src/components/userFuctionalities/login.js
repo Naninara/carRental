@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 function Login() {
   const [errorMessages, setErrorMessages] = useState({});
- 
+
   const [loginType, setLoginType] = useState("");
   const [auth, setAuth] = useState("");
   const [database, setDatabase] = useState([]);
-  const [ownerdb,setOwnerdb] = useState([]);
-  const [admindb,setAdmindb] = useState([]);
+  const [ownerdb, setOwnerdb] = useState([]);
+  const [admindb, setAdmindb] = useState([]);
   const navigate = useNavigate();
   {
     useEffect(() => {
@@ -52,11 +52,11 @@ function Login() {
         // success
         sessionStorage.setItem("gmail", userData.gmail);
         sessionStorage.setItem("auth", "true");
-        sessionStorage.setItem("type",userData.type)
+        sessionStorage.setItem("type", userData.type);
         setLoginType(userData.type);
       }
     } else {
-      alert("no user found please register")
+      alert("no user found please register");
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
@@ -64,7 +64,7 @@ function Login() {
   const adminSubmit = (event) => {
     event.preventDefault();
     var { gmail, pass } = document.forms[2];
-    console.log(admindb)
+    console.log(admindb);
     const userData = admindb.find((user) => user.gmail === gmail.value);
     if (userData) {
       if (userData.password !== pass.value) {
@@ -73,11 +73,11 @@ function Login() {
         // success
         sessionStorage.setItem("gmail", userData.gmail);
         sessionStorage.setItem("auth", "true");
-        sessionStorage.setItem("type",userData.type)
+        sessionStorage.setItem("type", userData.type);
         setLoginType(userData.type);
       }
     } else {
-      alert("no user found please register")
+      alert("no user found please register");
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
@@ -94,11 +94,11 @@ function Login() {
         // success
         sessionStorage.setItem("gmail", userData.gmail);
         sessionStorage.setItem("auth", "true");
-        sessionStorage.setItem("type",userData.type)
+        sessionStorage.setItem("type", userData.type);
         setLoginType(userData.type);
       }
     } else {
-      alert("no user found please register")
+      alert("no user found please register");
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
@@ -110,11 +110,11 @@ function Login() {
 
   const renderForm = (
     <div className="box">
-      <div >
+      <div>
         <div class="form-container">
           <p class="title">Welocome to Rent it</p>
           <p class="title">User Login</p>
-          <form class="form" >
+          <form class="form">
             <div class="input-group">
               <label for="username">Gmail</label>
               <input type="email" id="username" placeholder="" name="gmail" />
@@ -124,14 +124,10 @@ function Login() {
               <label for="password">Password</label>
               <input type="password" name="pass" id="password" placeholder="" />
               {renderErrorMessage("pass")}
-              <div class="forgot">
-                <Link rel="noopener noreferrer" to="/forgotpassword">
-                  Forgot Password ?
-                </Link>
-              </div>
+              <div class="forgot"></div>
             </div>
 
-            <button class="sign" type="submit" onClick={handleSubmit}>
+            <button class="sign mt-2" type="submit" onClick={handleSubmit}>
               Sign in
             </button>
           </form>
@@ -142,7 +138,7 @@ function Login() {
           </p>
         </div>
       </div>
-      <div >
+      <div>
         <div class="form-container">
           <p class="title">Welocome to Rent it</p>
           <p class="title">Owner Login</p>
@@ -156,14 +152,10 @@ function Login() {
               <label for="password">Password</label>
               <input type="password" name="pass" id="password" placeholder="" />
               {renderErrorMessage("pass")}
-              <div class="forgot">
-                <Link rel="noopener noreferrer" to="/forgotpassword">
-                  Forgot Password ?
-                </Link>
-              </div>
+              <div class="forgot"></div>
             </div>
 
-            <button class="sign" type="submit" onClick={ownerSubmit}>
+            <button class="sign mt-2" type="submit" onClick={ownerSubmit}>
               Sign in
             </button>
           </form>
@@ -175,11 +167,11 @@ function Login() {
         </div>
       </div>
 
-      <div >
+      <div>
         <div class="form-container">
           <p class="title">Welocome to Rent it</p>
           <p class="title">Admin Login</p>
-          <form class="form" >
+          <form class="form">
             <div class="input-group">
               <label for="username">Gmail</label>
               <input type="email" id="username" placeholder="" name="gmail" />
@@ -189,22 +181,13 @@ function Login() {
               <label for="password">Password</label>
               <input type="password" name="pass" id="password" placeholder="" />
               {renderErrorMessage("pass")}
-              <div class="forgot">
-                <Link rel="noopener noreferrer" to="/forgotpassword">
-                  Forgot Password ?
-                </Link>
-              </div>
+              <div class="forgot"></div>
             </div>
 
-            <button class="sign" type="submit" onClick={adminSubmit}>
+            <button class="sign mt-2" type="submit" onClick={adminSubmit}>
               Sign in
             </button>
           </form>
-
-          <p class="signup">
-            Don't have an account?
-            <Link to="/Adminsignup">Sign up</Link>
-          </p>
         </div>
       </div>
     </div>
@@ -212,13 +195,16 @@ function Login() {
 
   return (
     <>
-      {sessionStorage.getItem("auth") == "true" && sessionStorage.getItem("type")=="user" ? (
+      {sessionStorage.getItem("auth") == "true" &&
+      sessionStorage.getItem("type") == "user" ? (
         <div>{navigate("/dashboard")}</div>
-      ) :sessionStorage.getItem("auth") == "true" && sessionStorage.getItem("type")=="owner" ? (
+      ) : sessionStorage.getItem("auth") == "true" &&
+        sessionStorage.getItem("type") == "owner" ? (
         <div>{navigate("/ownerdashboard")}</div>
-      ):sessionStorage.getItem("auth") == "true" && sessionStorage.getItem("type")=="admin" ? (
+      ) : sessionStorage.getItem("auth") == "true" &&
+        sessionStorage.getItem("type") == "admin" ? (
         <div>{navigate("/admindashboard")}</div>
-      ): (
+      ) : (
         <div className="app">{renderForm}</div>
       )}
     </>
