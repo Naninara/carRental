@@ -199,13 +199,13 @@ function Login() {
     <>
       {sessionStorage.getItem("auth") == "true" &&
       sessionStorage.getItem("type") == "user" ? (
-        <div>{navigate("/dashboard")}<Dashboard/></div>
+        <div><Dashboard/></div>
       ) : sessionStorage.getItem("auth") == "true" &&
         sessionStorage.getItem("type") == "owner" ? (
-        <div>{navigate("/ownerdashboard")}<OwnerDashboard/></div>
+        <div><OwnerDashboard/></div>
       ) : sessionStorage.getItem("auth") == "true" &&
         sessionStorage.getItem("type") == "admin" ? (
-        <div>{navigate("/admindashboard")}<AdminDashboard/></div>
+        <div><AdminDashboard/></div>
       ) : (
         <div className="app">{renderForm}</div>
       )}
