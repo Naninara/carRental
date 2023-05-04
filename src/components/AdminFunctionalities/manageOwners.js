@@ -11,7 +11,7 @@ function ManageOwners() {
     useEffect(() => {
       axios
         .get(
-          `http://localhost:4000/getownersignupdetails`
+          `https://puce-badger-toga.cyclic.app/getownersignupdetails`
         )
         .then((res) => {
           setData(res.data);

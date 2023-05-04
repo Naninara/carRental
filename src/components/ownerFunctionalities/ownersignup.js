@@ -20,7 +20,7 @@ function Ownersignup() {
   const postData = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/ownersignup", { signup })
+      .post("https://puce-badger-toga.cyclic.app/ownersignup", { signup })
       .then((res) => {
         setSignup(res.data);
         alert("signup successfull please proceed to login");

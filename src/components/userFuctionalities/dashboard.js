@@ -17,7 +17,7 @@ const Dashboard = () => {
   return (
     <>
       {useEffect(() => {
-        axios.get("http://localhost:4000/getcars").then((res) => {
+        axios.get("https://puce-badger-toga.cyclic.app/getcars").then((res) => {
           setDetails(res.data);
           setFe(true);
         });

@@ -16,7 +16,7 @@ function Viewstatus() {
   });
 
   {useEffect(() => {
-    axios.get(`http://localhost:4000/getbookingdetails:${sessionStorage.getItem("gmail")}`).then((res) => {
+    axios.get(`https://puce-badger-toga.cyclic.app/getbookingdetails:${sessionStorage.getItem("gmail")}`).then((res) => {
       setFeedback(res.data);
       console.log(feedback)
       setFe(true);

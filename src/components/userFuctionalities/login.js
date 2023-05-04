@@ -14,7 +14,7 @@ function Login() {
   const navigate = useNavigate();
   {
     useEffect(() => {
-      axios.get("http://localhost:4000/getsignupdetails").then((res) => {
+      axios.get("https://puce-badger-toga.cyclic.app/getsignupdetails").then((res) => {
         setDatabase(res.data);
       });
     }, []);
@@ -22,7 +22,7 @@ function Login() {
 
   {
     useEffect(() => {
-      axios.get("http://localhost:4000/getownersignupdetails").then((res) => {
+      axios.get("https://puce-badger-toga.cyclic.app/getownersignupdetails").then((res) => {
         setOwnerdb(res.data);
       });
     }, []);
@@ -30,7 +30,7 @@ function Login() {
 
   {
     useEffect(() => {
-      axios.get("http://localhost:4000/getadminsignupdetails").then((res) => {
+      axios.get("https://puce-badger-toga.cyclic.app/getadminsignupdetails").then((res) => {
         setAdmindb(res.data);
       });
     }, []);

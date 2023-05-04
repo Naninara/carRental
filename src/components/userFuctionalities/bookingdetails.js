@@ -10,7 +10,7 @@ function Bookingdetails() {
     useEffect(() => {
       axios
         .get(
-          `http://localhost:4000/getbookingdetails:${sessionStorage.getItem(
+          `https://puce-badger-toga.cyclic.app/getbookingdetails:${sessionStorage.getItem(
             "gmail"
           )}`
         )

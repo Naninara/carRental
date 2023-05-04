@@ -10,7 +10,7 @@ function Ownerviewhistory() {
       useEffect(() => {
         axios
           .get(
-            `http://localhost:4000/getbookingdetails`
+            `https://puce-badger-toga.cyclic.app/getbookingdetails`
           )
           .then((res) => {
             setData(res.data);

@@ -20,7 +20,7 @@ function Adminsignup() {
       const postData = (e) => {
         e.preventDefault();
         axios
-          .post("http://localhost:4000/adminsignup", { signup })
+          .post("https://puce-badger-toga.cyclic.app/adminsignup", { signup })
           .then((res) => {
             setSignup(res.data);
             alert("signup successfull please proceed to login");

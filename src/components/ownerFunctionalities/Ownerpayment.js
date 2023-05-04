@@ -8,7 +8,7 @@ function Ownerpayment() {
   const [fe, setFe] = useState(false);
   {
     useEffect(() => {
-      axios.get(`http://localhost:4000/getbookingdetails`).then((res) => {
+      axios.get(`https://puce-badger-toga.cyclic.app/getbookingdetails`).then((res) => {
         setData(res.data);
         setFe(true);
       });

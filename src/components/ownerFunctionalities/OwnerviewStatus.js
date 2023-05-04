@@ -36,7 +36,7 @@ function OwnerviewStatus() {
   let [AllBookings, setAllbookings] = useState([]);
   {
     useEffect(() => {
-      axios.get("http://localhost:4000/getbookingdetails").then((res) => {
+      axios.get("https://puce-badger-toga.cyclic.app/getbookingdetails").then((res) => {
         setAllbookings(res.data);
       });
     }, []);

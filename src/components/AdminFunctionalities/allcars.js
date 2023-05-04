@@ -11,7 +11,7 @@ function Allcars() {
     useEffect(() => {
       axios
         .get(
-          `http://localhost:4000/getcars`
+          `https://puce-badger-toga.cyclic.app/getcars`
         )
         .then((res) => {
           setData(res.data);

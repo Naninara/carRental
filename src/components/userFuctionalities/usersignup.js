@@ -20,7 +20,7 @@ function Usersignup() {
 
   const postData = (e)=>{
     e.preventDefault();
-    axios.post("http://localhost:4000/signup",{signup}).then((res)=>{
+    axios.post("https://puce-badger-toga.cyclic.app/signup",{signup}).then((res)=>{
       setSignup(res.data);
       alert("signup successfull please proceed to login")
     }).catch(err=>{

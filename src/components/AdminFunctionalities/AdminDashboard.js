@@ -11,7 +11,7 @@ function AdminDashboard() {
     useEffect(() => {
       axios
         .get(
-          `http://localhost:4000/getsignupdetails`
+          `https://puce-badger-toga.cyclic.app/getsignupdetails`
         )
         .then((res) => {
           setData(res.data);

@@ -52,7 +52,7 @@ function Cardetails() {
     let a = check();
     if (a) {
       axios
-        .post("http://localhost:4000/bookingdetails", { BookingDetails })
+        .post("https://puce-badger-toga.cyclic.app/bookingdetails", { BookingDetails })
         .then((res) => {
           SetBookingDetails(res.data);
           alert("booking successful please pay the payment in booking section");
