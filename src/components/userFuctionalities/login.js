@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import Dashboard from "./dashboard";
+import OwnerDashboard from "../ownerFunctionalities/ownerDashboard";
+import AdminDashboard from "../AdminFunctionalities/AdminDashboard";
 import axios from "axios";
 function Login() {
   const [errorMessages, setErrorMessages] = useState({});
@@ -197,13 +199,13 @@ function Login() {
     <>
       {sessionStorage.getItem("auth") == "true" &&
       sessionStorage.getItem("type") == "user" ? (
-        <div>{navigate("/dashboard")}</div>
+        <div>{navigate("/dashboard")}<Dashboard/></div>
       ) : sessionStorage.getItem("auth") == "true" &&
         sessionStorage.getItem("type") == "owner" ? (
-        <div>{navigate("/ownerdashboard")}</div>
+        <div>{navigate("/ownerdashboard")}<OwnerDashboard/></div>
       ) : sessionStorage.getItem("auth") == "true" &&
         sessionStorage.getItem("type") == "admin" ? (
-        <div>{navigate("/admindashboard")}</div>
+        <div>{navigate("/admindashboard")}<AdminDashboard/></div>
       ) : (
         <div className="app">{renderForm}</div>
       )}
