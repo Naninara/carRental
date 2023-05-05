@@ -21,14 +21,21 @@ import ManageOwners from "./components/AdminFunctionalities/manageOwners";
 import Manageusers from "./components/AdminFunctionalities/manageusers";
 import Allcars from "./components/AdminFunctionalities/allcars";
 import Ownerdetails from "./components/AdminFunctionalities/ownerdetails";
+import Homepage from "./components/userFuctionalities/homepage";
+import Ownerlogin from "./components/ownerFunctionalities/ownerlogin";
+import Adminlogin from "./components/AdminFunctionalities/Adminlogin";
 function App() {
   let url = process.env.PUBLIC_URL;
   return (
     <div className="App">
       <BrowserRouter basename={url}>
         <Routes>
-          <Route exact path="/" element={<Login />}></Route>
-          <Route exact path= "/dashboard" element={<Dashboard />}></Route>
+          <Route exact path="/" element={<Homepage />}></Route>
+          <Route exact path="/userlogin" element={<Login />}></Route>
+          <Route exact path="/ownerlogin" element={< Ownerlogin/>}></Route>
+          <Route exact path="/adminlogin" element={< Adminlogin/>}></Route>
+
+          <Route exact path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/cardetails" element={<Cardetails />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
           <Route path="/viewhistory" element={<Viewstatus />}></Route>
