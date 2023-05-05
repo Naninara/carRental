@@ -31,7 +31,7 @@ function Adminlogin() {
   const adminSubmit = (event) => {
     event.preventDefault();
     var { gmail, pass } = document.forms[0];
-   
+
     const userData = admindb.find((user) => user.gmail === gmail.value);
     if (userData) {
       if (userData.password !== pass.value) {
@@ -76,11 +76,6 @@ function Adminlogin() {
             Sign in
           </button>
         </form>
-
-        <p class="signup">
-          Don't have an account?
-          <Link to="/adminsignup">Sign up</Link>
-        </p>
       </div>{" "}
     </div>
   );
