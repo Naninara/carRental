@@ -174,12 +174,17 @@ body {
 @media only screen and (max-width: 770px) {
   .homepage{
     flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .homepage-card{
+   
   }
 }
 .homepage-card {
   width: 12.5rem;
   height: 17rem;
-  
+ 
   background-color: #212121;
   border-radius: 1rem;
   border: #212121 0.2rem solid;
